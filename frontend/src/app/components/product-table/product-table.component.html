@@ -1,0 +1,45 @@
+<div class="content">
+  <div class="table-product">
+    <button type="button" class="btn btn-primary btn-add-product">
+      <i class="bi bi-plus"></i>
+      New
+    </button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th class="manage" colspan="9">Manage Products</th> 
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+            <th scope="col" colspan="3">Date</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let product of products">
+            <th scope="row">{{product.id}}</th>
+            <td>Image</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category}}</td>
+            <td>27/08/199</td>
+            <td>
+              <button class="edit-icon" routerLink="/detail/{{product.id}}">
+                <i class="bi bi-pencil-fill"></i>
+              </button>
+            </td>
+            <td>
+              <button class="delete-icon" routerLink="/detail/{{product.id}}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

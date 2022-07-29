@@ -1,0 +1,50 @@
+.content{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    height: 90%;
+}
+
+.table-product{
+    height: 100%;
+    width: 90%;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.btn-add-product{
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+thead{
+    background-color: #f8f9fa;
+    height: 55px;
+}
+
+th.manage{
+    font-weight: 500;
+    font-size: 25px;
+}
+
+td button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    border: 0;
+}
+
+button i{
+    color: white;
+}
+
+button.edit-icon{
+    background-color: green;
+}
+
+
+button.delete-icon{
+    background-color: orange;
+}
