@@ -24,8 +24,8 @@ def upgrade() -> None:
         'product',
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('description', sa.String(50), nullable=False),
-        sa.Column('date', sa.TIMESTAMP, nullable=False, server_default=sa.func.now()),
-        sa.Column('category', sa.String(50), nullable=False)
+        sa.Column('price', sa.Float, nullable=False),
+        sa.Column('category', sa.String(50))
     ), 
 
 
