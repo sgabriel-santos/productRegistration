@@ -7,4 +7,5 @@ class Product(Base):
     id = Column(Integer, primary_key=True, index=True)
     description = Column(String(64))
     category = Column(String(50))
+    date = Column(String(50))
     price = Column(Float)

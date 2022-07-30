@@ -1,0 +1,47 @@
+<div class="content">
+    <div class="col-md-6 col-lg-4">
+        <h4 class="mb-3">Alterar Produto</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+            <div class="col-sm-12">
+              <label for="firstName" class="form-label">Descrição</label>
+              <input [(ngModel)]="product.description" name="description" type="text" class="form-control" placeholder="Product Name" value="{{product?.description}}">
+            </div>
+
+            <div class="col-6">
+              <label for="username" class="form-label">Preço</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">R$</span>
+                <input [(ngModel)]="product.price" name="price" type="text" class="form-control" id="price" value="{{product.price}}" placeholder="Valor">
+              </div>
+            </div>
+    
+            <div class="col-6">
+              <label for="username" class="form-label">Data da Compra</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">
+                  <i class="bi bi-calendar"></i>
+                </span>
+                <input [(ngModel)]="product.date" name="date" type="text" class="form-control" id="username" value="{{product.date}}" placeholder="30/07/2022">
+              </div>
+            </div>
+    
+            <div class="col-md-5">
+              <label for="country" class="form-label">Categoria</label>
+              <select [(ngModel)]="product.category" name="category" class="form-select" id="country" required="">
+                <option 
+                  *ngFor="let option of category"
+                  [selected]="option == product.category"
+                >
+                {{option}}
+              </option>
+              </select>
+            </div>
+          </div>
+
+          <hr class="my-4">
+    
+          <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="onChangeProduct()">Alterar Produto</button>
+        </form>
+      </div>
+</div>

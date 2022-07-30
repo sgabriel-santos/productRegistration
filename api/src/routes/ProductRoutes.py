@@ -66,7 +66,7 @@ async def create_product(product: ProductSchema.ProductCreate, db: AsyncSession 
 
 # PUT method
 @router.put("/{product_id}", response_model=ProductSchema.ProductCreate)
-async def update_product(product: ProductSchema.ProductCreate, product_id: int, db: AsyncSession = Depends(get_session)):
+async def update_product(product: ProductSchema.Product, product_id: int, db: AsyncSession = Depends(get_session)):
     """
     Update a product from database.
 

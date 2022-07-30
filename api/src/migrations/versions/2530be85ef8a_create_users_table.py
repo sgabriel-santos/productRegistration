@@ -25,7 +25,8 @@ def upgrade() -> None:
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('description', sa.String(50), nullable=False),
         sa.Column('price', sa.Float, nullable=False),
-        sa.Column('category', sa.String(50))
+        sa.Column('category', sa.String(50)),
+        sa.Column('date', sa.String(50))
     ), 
 
 
