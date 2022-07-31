@@ -1,9 +1,17 @@
 <div class="content">
   <div class="table-product">
-    <button routerLink="/addProduct" type="button" class="btn btn-primary btn-add-product">
+    <button routerLink="/addProduct" type="button" class="btn btn-primary btn-add-product btn-new">
       <i class="bi bi-plus"></i>
       New
     </button>
+    <div class="input-search">
+      <div class="input-group w-90">
+        <span class="input-group-text" id="basic-addon1">
+          <i class="bi bi-search icon-search"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Procure seu produto aqui" aria-label="Input group example" aria-describedby="basic-addon1">
+      </div>
+    </div>
     <table class="table">
         <thead>
           <tr>
@@ -12,18 +20,14 @@
         </thead>
         <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Image</th>
             <th scope="col">Description</th>
-            <th scope="col">Price</th>
+            <th scope="col">Price (R$)</th>
             <th scope="col">Category</th>
             <th scope="col" colspan="3">Date</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
           <tr *ngFor="let product of products">
-            <th scope="row">{{product.id}}</th>
-            <td>Image</td>
             <td>{{product.description}}</td>
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
