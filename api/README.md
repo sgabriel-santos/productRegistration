@@ -5,7 +5,7 @@ To test the backend, follow the steps bellow:
 
 ### 1.1 Installing project dependencies
 - Open cmd in the `productRegistration\api` directory
-- Create a python virtual enviroment with: "py -m venv venv"
+- Create a python virtual enviroment with: `py -m venv venv`
 - Open the virtual enviroment with: `venv\Scripts\activate` (on Windows)
 - Install the project dependencies with: `pip install -r requirements.txt`
 
@@ -29,7 +29,7 @@ But, It's necessary to configure database as in the next section
 #### 1.2.2 To create database tables it's necessary perform the bellow command
 - Open cmd in `the productRegistration\api` directory again
 - perform `alembic upgrade head` command 
-- For more information about alembic, see the section ***2.1 About Alembic***
+- For more information about alembic, see the section [2.1 About Alembic](https://github.com/sgabriel-santos/productRegistration/tree/main/api#21-about-alembic)
 
 ```sh
 alembic upgrade head
