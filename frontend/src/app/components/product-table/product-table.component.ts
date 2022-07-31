@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductTableComponent implements OnInit {
   
   products: Product[] = [];
+  realProducts: Product[] = []
 
   constructor(private productService: ProductService) {}
 
@@ -21,14 +22,21 @@ export class ProductTableComponent implements OnInit {
     this.productService.getProducts()
         .subscribe(products => {
           this.products = products;
-          console.log(products)
+          this.realProducts = products
         });
   }
 
+  onInputChange(event: any){
+    let input_value = event.target.value
+    this.products = this.realProducts.filter(value => {
+      return value.description.toLocaleLowerCase().includes(input_value.trim().toLocaleLowerCase())
+    })
+  }
+
   delete(product_id: any): void {
-    console.log(product_id)
     this.productService.deleteProduct(product_id).subscribe(_ => {
-      this.products = this.products.filter(producct => producct.id !== product_id);
+      this.realProducts = this.realProducts.filter(product => product.id !== product_id);
+      this.products = this.products.filter(product => product.id !== product_id);
     })
   }
 }

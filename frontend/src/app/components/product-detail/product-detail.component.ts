@@ -8,7 +8,9 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  @Input() product: any = {};
+  product: any = {};
+  isUpdate: Boolean = false
+  title = 'Alterar'
   category = ['Livro', 'Acessórios', 'Eletrônico']
 
   constructor(private route: ActivatedRoute,
@@ -22,12 +24,30 @@ export class ProductDetailComponent implements OnInit {
 
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getProduct(id)
-    .subscribe(product =>  this.product = product);
+    if(id){
+      this.productService.getProduct(id)
+      .subscribe(product =>  this.product = product);
+    }else{
+      this.title = 'Adicionar'
+    }
   }
 
   onChangeProduct(){
-    console.log(this.product)
+    if(this.isUpdate){
+      this.updateProduct()
+    }else{
+      this.addProduct() 
+    }
+  }
+
+  addProduct(){
+    this.product.price = Number(this.product.price)
+    this.productService.addProduct(this.product).subscribe(_ =>
+      this.router.navigate(['/'])
+    )
+  }
+
+  updateProduct(){
     this.productService.updateProduct(this.product, this.product.id).subscribe(_ =>
       this.router.navigate(['/'])
     )
