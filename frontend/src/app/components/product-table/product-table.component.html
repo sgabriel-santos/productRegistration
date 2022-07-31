@@ -1,6 +1,6 @@
 <div class="content">
   <div class="table-product">
-    <button type="button" class="btn btn-primary btn-add-product">
+    <button routerLink="/addProduct" type="button" class="btn btn-primary btn-add-product">
       <i class="bi bi-plus"></i>
       New
     </button>
@@ -34,7 +34,7 @@
               </button>
             </td>
             <td>
-              <button class="delete-icon" routerLink="/detail/{{product.id}}">
+              <button class="delete-icon" (click)="delete(product.id)">
                 <i class="bi bi-trash"></i>
               </button>
             </td>

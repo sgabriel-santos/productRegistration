@@ -37,7 +37,12 @@ export class ProductService {
 
   /** POST: add a new Product to the server */
   addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.url, {description: product.description, category: product.category, price: product.price}, this.httpOptions)
+    return this.http.post<Product>(this.url, {
+        description: product.description, 
+        category: product.category, 
+        price: product.price, 
+        date: product.date}, 
+        this.httpOptions)
   }
 
   /** PUT: update the product on the server */

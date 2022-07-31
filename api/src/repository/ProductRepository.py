@@ -1,3 +1,4 @@
+from datetime import date
 from sqlalchemy.ext.asyncio import AsyncSession
 from ..schemas import ProductSchema
 from ..models import ProductModel
@@ -10,7 +11,7 @@ from sqlalchemy import update, delete
 
 # CREATE operations
 async def create_product(db: AsyncSession, product: ProductSchema.ProductCreate):
-    db_product = ProductModel.Product(description=product.description, category=product.category, price=product.price)
+    db_product = ProductModel.Product(description=product.description, category=product.category, price=product.price, date=product.date)
     db.add(db_product)
     return db_product
 

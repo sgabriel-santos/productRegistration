@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from 'src/app/interfaces/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
   @Input() product: any = {};
-  category = ['Choose...', 'Livro', 'Acessórios', 'Eletrônico']
+  category = ['Livro', 'Acessórios', 'Eletrônico']
 
   constructor(private route: ActivatedRoute,
     private productService: ProductService,

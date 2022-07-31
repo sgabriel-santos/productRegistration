@@ -25,9 +25,10 @@ export class ProductTableComponent implements OnInit {
         });
   }
 
-  delete(product: Product): void {
-    this.productService.deleteProduct(product.id).subscribe(_ => {
-      this.products = this.products.filter(h => h !== product);
+  delete(product_id: any): void {
+    console.log(product_id)
+    this.productService.deleteProduct(product_id).subscribe(_ => {
+      this.products = this.products.filter(producct => producct.id !== product_id);
     })
   }
 }
