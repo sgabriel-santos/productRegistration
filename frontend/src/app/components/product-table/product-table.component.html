@@ -29,7 +29,7 @@
         <tbody class="table-group-divider">
           <tr *ngFor="let product of products">
             <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.price.toFixed(2)}}</td>
             <td>{{product.category}}</td>
             <td>{{product.date}}</td>
             <td>

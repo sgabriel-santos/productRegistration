@@ -1,3 +1,4 @@
+import { keyframes } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
@@ -26,10 +27,16 @@ export class ProductTableComponent implements OnInit {
         });
   }
 
+  isIncludes(text: any, value: any){
+    return text.toLocaleLowerCase().includes(value.trim().toLocaleLowerCase())
+  }
+
   onInputChange(event: any){
     let input_value = event.target.value
-    this.products = this.realProducts.filter(value => {
-      return value.description.toLocaleLowerCase().includes(input_value.trim().toLocaleLowerCase())
+    this.products = this.realProducts.filter(value => {      
+      return this.isIncludes(value.description, input_value)
+            || this.isIncludes(value.category, input_value)
+            ||this.isIncludes(value.date, input_value)
     })
   }
 

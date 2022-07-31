@@ -2,11 +2,12 @@
     padding-top: 50px;
     display: flex;
     justify-content: center;
+    min-height: 100%;
 }
 
 .table-product{
     margin-bottom: 5px;
-    height: 100%;
+    min-height: 100%;
     width: 90%;
     padding: 20px 50px;
     box-sizing: border-box;

@@ -11,7 +11,7 @@ export class ProductDetailComponent implements OnInit {
   product: any = {};
   isUpdate: Boolean = false
   title = 'Alterar'
-  category = ['Livro', 'Acessórios', 'Eletrônico']
+  category = ['Livro', 'Acessórios', 'Eletrônico', 'Fitness', 'Roupa']
 
   constructor(private route: ActivatedRoute,
     private productService: ProductService,
