@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
   product: any = {};
-  isUpdate: Boolean = false
+  isUpdate: Boolean = true
   title = 'Alterar'
   category = ['Livro', 'Acessórios', 'Eletrônico', 'Fitness', 'Roupa']
 
@@ -29,6 +29,7 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(product =>  this.product = product);
     }else{
       this.title = 'Adicionar'
+      this.isUpdate = false
     }
   }
 

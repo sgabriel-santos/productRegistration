@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { ProductTableComponent } from './product-table.component';
 
@@ -8,6 +10,7 @@ describe('ProductTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [FormsModule, HttpClientTestingModule],
       declarations: [ ProductTableComponent ]
     })
     .compileComponents();
@@ -20,4 +23,13 @@ describe('ProductTableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('isIncludes should be True', () => {
+    expect(component.isIncludes('Test if includes', 'test')).toBeTrue()
+    
+  })
+
+  it('isIncludes should be False', () => {
+    expect(component.isIncludes('Test if includes', 'teste')).toBeFalse()
+  })
 });
